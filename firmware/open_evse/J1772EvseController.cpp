@@ -169,7 +169,7 @@ void J1772EVSEController::SaveSettings()
   else {
     dest = (uint8_t *)EOFS_CURRENT_CAPACITY_L2;
   }
-  eeprom_write_byte(dest, GetCurrentCapacity());
+  eeprom_write_byte(dest, GetMaxCurrentCapacity());
   SaveEvseFlags();
 }
 
@@ -309,6 +309,7 @@ void J1772EVSEController::chargingOn()
   }
   else {
     m_AccumulatedChargeTime += m_ElapsedChargeTime;
+    m_ElapsedChargeTime = 0;
   }
 
   m_ChargeOnTimeMS = millis();

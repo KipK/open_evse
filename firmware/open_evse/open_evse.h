@@ -991,11 +991,6 @@ public:
 #ifdef TMP007_IS_ON_I2C
   Adafruit_TMP007 m_tmp007;
 #endif  //TMP007_IS_ON_I2C
-#ifdef TEMPERATURE_MONITORING_NY
-  int16_t m_ambient_thresh;
-  int16_t m_ir_thresh;
-  int16_t m_TMP007_thresh;
-#endif //TEMPERATURE_MONITORING_NY
   // these three temperatures need to be signed integers
   int16_t m_MCP9808_temperature;  // 230 means 23.0C  Using an integer to save on floating point library use
   int16_t m_DS3231_temperature;   // the DS3231 RTC has a built in temperature sensor
